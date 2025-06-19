@@ -11,7 +11,7 @@ export default function Index() {
 
   const data = query.data ?? "";
 
-  const ref = useRef(query.data ?? "");
+  const ref = useRef("");
 
   return (
     <SafeAreaView

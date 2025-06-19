@@ -1,6 +1,13 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { proxy, subscribe, useSnapshot } from "valtio";
 
+// I want to mimic the react-query mutation
+const setValtioAsyncStorageKey = (value: string | null) => {
+  setTimeout(() => {
+    ValtioAsyncStorageKey.state = value;
+  }, 2000);
+};
+
 const ValtioAsyncStorageKey = proxy<{
   state: string | null;
 }>({
@@ -35,4 +42,8 @@ subscribe(ValtioAsyncStorageKey, () => {
   return AsyncStorage.removeItem("async-storage-key");
 });
 
-export { useValtioAsyncStorageKey, ValtioAsyncStorageKey };
+export {
+  setValtioAsyncStorageKey,
+  useValtioAsyncStorageKey,
+  ValtioAsyncStorageKey,
+};

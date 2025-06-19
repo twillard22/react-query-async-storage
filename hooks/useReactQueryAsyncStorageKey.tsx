@@ -1,4 +1,5 @@
 import { queryClient } from "@/app/_layout";
+import { setValtioAsyncStorageKey } from "@/hooks/useValtioAsyncStorageKey";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
@@ -18,6 +19,9 @@ const useReactQueryAsyncStorageKey = () => {
     mutation: useMutation({
       mutationKey: ["async-storage-key"],
       mutationFn: async (value?: string) => {
+        // I'm going to manually set valtio state here so it stays in sync
+        setValtioAsyncStorageKey(value ?? null);
+
         if (value) {
           return AsyncStorage.setItem("async-storage-key", value);
         }

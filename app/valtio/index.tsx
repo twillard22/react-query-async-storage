@@ -1,6 +1,6 @@
 import {
+  setValtioAsyncStorageKey,
   useValtioAsyncStorageKey,
-  ValtioAsyncStorageKey,
 } from "@/hooks/useValtioAsyncStorageKey";
 import { useRef } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
@@ -11,7 +11,7 @@ export default function Index() {
 
   const data = state ?? "";
 
-  const ref = useRef(data ?? "");
+  const ref = useRef("");
 
   return (
     <SafeAreaView
@@ -51,7 +51,7 @@ export default function Index() {
         <Pressable
           onPress={() => {
             // Setting the state to me feels wonky
-            ValtioAsyncStorageKey.state = ref.current;
+            setValtioAsyncStorageKey(ref.current);
           }}
         >
           <Text>Set Async Storage Value</Text>
