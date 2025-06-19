@@ -31,6 +31,11 @@ The goal of this project is to show an example of using react-query to manage yo
 
 This also allows for better key management, and perhaps future state would allow custom parsers etc... for things that do not deserialize well (specifically dates).
 
+## Example
+In this example I show the comparison between writing your own implementation with valtio vs. using the built in functionality of react-query. I use timeouts to showcase the functionality a bit better like loading states etc... but generally speaking with async storage it's "instant". It also demonstrates the compatibility with reactotron.
+
+<video src="https://github.com/user-attachments/assets/adec0d09-23a4-4062-a86e-d74196de94a1"></video>
+
 ## Learn more
 
 To learn more about developing your project with Expo, look at the following resources:
