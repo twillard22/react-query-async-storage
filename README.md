@@ -1,4 +1,4 @@
-# Welcome to your Expo app 👋
+# Welcome to react-query-async-storage 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
@@ -7,16 +7,16 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 1. Install dependencies
 
    ```bash
-   npm install
+   yarn
    ```
 
 2. Start the app
 
    ```bash
-   npx expo start
+   yarn expo start
    ```
 
-In the output, you'll find options to open the app in a
+In the output, you'll find options to open the app in the following, you should use Expo Go as this is just a demo with no native deps (outside of the ones that comes with Expo by default)
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
@@ -25,15 +25,11 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Goal
 
-When you're ready, run:
+The goal of this project is to show an example of using react-query to manage your async storage values. Currently using [valtio or zustand](https://github.com/pmndrs/zustand/issues/483) work decently but require manual initialization and a lof of boilerplate, such as loading / initialization states, stale times, etc... that comes standard with react-query, its also less intuitive than react-query for updating state across the application in my opinion. Because [react-query](https://tanstack.com/) supports [reactotron](https://tanstack.com/query/latest/docs/framework/react/react-native#devtools-support) out of the box, this should allows us to monitor our async storage stage with it as well. Moving forward once [react-native-dev-tool](https://reactnative.dev/docs/react-native-devtools) is robust enough to support plugins, or offers state monitoring react-query will likely be compatible, offering another avenue for Async Storage monitoring.
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This also allows for better key management, and perhaps future state would allow custom parsers etc... for things that do not deserialize well (specifically dates).
 
 ## Learn more
 
